@@ -26,8 +26,8 @@
       </a>
     {% endif %}
     {% if repository.homepage %}
-      <a href="{{ repository.homepage }}" class="d-inline-block link-gray mr-4">
-        {% octicon link height:16 %}{{ repository.homepage }}
+      <a href="{{ repository.homepage }}" class="d-inline-block link-gray mr-4 no-wrap ellipsis-overflow">
+        {% octicon link width:16 class:"mr-1" %}{{ repository.homepage }}
       </a>
     {% endif %}
   </div>
