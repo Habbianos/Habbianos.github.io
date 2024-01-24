@@ -52,3 +52,8 @@
 .min-height-full {
   min-height: 100vh;
 }
+
+.ellipsis-overflow {
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
