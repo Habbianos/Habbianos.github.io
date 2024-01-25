@@ -30,5 +30,8 @@
         {% octicon link width:16 class:"mr-1" %}{{ repository.homepage }}
       </a>
     {% endif %}
+    <pre>
+      {{ repository | jsonify | escape }}
+  </pre>
   </div>
 </div>
