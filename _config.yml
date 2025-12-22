@@ -22,6 +22,16 @@ projects:
   #   - pushed
   #   - stars
   # limit: 9
+  pinned:
+    - notations
+    - Traxmachine
+    - habbo-diagonal-font
+    - totem-combinations
+    - samples-book
+    - hbsfx
+    - animator
+    - fonts
+    - bubbles
   exclude:
     archived: false
     forks: true

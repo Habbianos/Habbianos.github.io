@@ -1,0 +1,22 @@
+{% if site.projects.pinned and site.projects.pinned.size > 0 %}
+  <h2 {% if site.style == 'dark' %}class="text-white"{% endif %}>Pinned Projects</h2>
+
+  <div class="d-sm-flex flex-wrap gutter-condensed mb-4">
+    {% assign pinned_repos = site.github.public_repositories
+      | where_exp: "repo", "site.projects.pinned contains repo.name" %}
+
+    {% if site.projects.exclude.archived %}
+      {% assign pinned_repos = pinned_repos | where: "archived", false %}
+    {% endif %}
+
+    {% if site.projects.exclude.forks %}
+      {% assign pinned_repos = pinned_repos | where: "fork", false %}
+    {% endif %}
+
+    {% for repository in pinned_repos %}
+      <div class="col-sm-6 col-md-12 col-lg-6 col-xl-4 mb-3">
+        {% include repo-card.html %}
+      </div>
+    {% endfor %}
+  </div>
+{% endif %}
