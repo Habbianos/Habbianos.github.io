@@ -1,15 +1,5 @@
 <div class="github-component d-flex flex-column flex-justify-between height-full text-left {% if site.style == 'dark' %}box-shadow{% else %}border border-gray-light{% endif %} bg-white rounded-1 p-3">
-  {% assign resolver_url = "https://og-image-proxy.alynva.com/json?url=" | append: repository.html_url %}
-  {% assign resolved = resolver_url | get_json | default: nil %}
-  {% assign thumbnail = resolved.image | default: nil %}
-
-  <!-- DEBUG -->
-  <pre style="display:none">
-  {{ resolver_url }}
-  </pre>
-  <pre style="display:none">
-  {{ resolved | jsonify }}
-  </pre>
+  {% assign thumbnail = "https://og-image-proxy.alynva.com/json?url=" | append: repository.html_url %}
 
   {% if thumbnail %}
     <a href="{{ repository.html_url }}" target="_blank" class="d-block mb-3">
