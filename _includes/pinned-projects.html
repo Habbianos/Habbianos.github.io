@@ -1,5 +1,6 @@
 {% if site.projects.pinned and site.projects.pinned.size > 0 %}
   <h2 {% if site.style == 'dark' %}class="text-white"{% endif %}>Pinned Projects</h2>
+  <p class="f4 mb-4 {% if site.style == 'dark' %}text-white{% else %}text-gray{% endif %}">Featured repositories we're currently working on or most proud of..</p>
 
   <div class="d-sm-flex flex-wrap gutter-condensed mb-4">
     {% assign pinned_repos = site.github.public_repositories
