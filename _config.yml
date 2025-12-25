@@ -17,7 +17,7 @@ defaults:
       layout: "post"
 
 projects:
-  sort_by: pushed
+  sort_by: stars
   # sort_by options:
   #   - pushed
   #   - stars
@@ -27,14 +27,15 @@ projects:
     - Traxmachine
     - habbo-diagonal-font
     - totem-combinations
+    - message-maker
     - samples-book
     - hbsfx
-    - animator
     - fonts
     - bubbles
+    - group-badge-generator
   exclude:
     archived: false
-    forks: true
+    forks: false
     projects:
     # - repo-name
 

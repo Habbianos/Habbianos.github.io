@@ -13,6 +13,12 @@
       {% assign pinned_repos = pinned_repos | where: "fork", false %}
     {% endif %}
 
+    {% if site.projects.sort_by == 'stars' %}
+      {% assign pinned_repos = pinned_repos | sort: "stargazers_count" | reverse %}
+    {% else %}
+      {% assign pinned_repos = pinned_repos | sort: "pushed_at" | reverse %}
+    {% endif %}
+
     {% for repository in pinned_repos %}
       <div class="col-sm-6 col-md-12 col-lg-6 col-xl-4 mb-3">
         {% include repo-card.html %}
