@@ -1,4 +1,17 @@
 <div class="github-component d-flex flex-column flex-justify-between height-full text-left {% if site.style == 'dark' %}box-shadow{% else %}border border-gray-light{% endif %} bg-white rounded-1 p-3">
+  {% assign thumbnail = repository.open_graph_image_url %}
+
+  {% if thumbnail %}
+    <a href="{{ repository.html_url }}" target="_blank" class="d-block mb-3">
+      <img
+        src="{{ thumbnail }}"
+        alt="{{ repository.name }} thumbnail"
+        class="width-full rounded-1 repo-thumbnail"
+        loading="lazy"
+      >
+    </a>
+  {% endif %}
+
   <div class="flex-auto">
     <div class="d-flex flex-justify-between flex-items-start mb-1">
       <h1 class="f4 lh-condensed mb-1">
