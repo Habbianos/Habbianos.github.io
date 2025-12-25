@@ -3,6 +3,14 @@
   {% assign resolved = resolver_url | get_json | default: nil %}
   {% assign thumbnail = resolved.image | default: nil %}
 
+  <!-- DEBUG -->
+  <pre style="display:none">
+  {{ resolver_url }}
+  </pre>
+  <pre style="display:none">
+  {{ resolved | jsonify }}
+  </pre>
+
   {% if thumbnail %}
     <a href="{{ repository.html_url }}" target="_blank" class="d-block mb-3">
       <img
