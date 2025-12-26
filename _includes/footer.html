@@ -1,2 +1,27 @@
+    <script>
+      (async () => {
+        const images = document.querySelectorAll('img[data-repo-url]');
+
+        for (const img of images) {
+          const repoUrl = img.dataset.repoUrl;
+
+          try {
+            const proxyUrl = `https://corsproxy.io/?${encodeURIComponent(repoUrl)}`;
+            const res = await fetch(proxyUrl);
+            const html = await res.text();
+
+            const doc = new DOMParser().parseFromString(html, 'text/html');
+            const ogImage = doc.querySelector('meta[property="og:image"]');
+
+            if (ogImage && ogImage.content) {
+              img.src = ogImage.content;
+            }
+          } catch (err) {
+            console.warn('Failed to load thumbnail for', repoUrl, err);
+          }
+        }
+      })();
+    </script>
+
   </body>
 </html>
